@@ -53,7 +53,7 @@
       <b-col v-if="selectedSvc.length > 0" class="m-0 p-0 overflow-auto" cols="8" >
         <Service/>
       </b-col>
-      <b-col v-else-if="functionsSelected > 0" class="m-0 p-0 overflow-auto" cols="8" >
+      <b-col v-else-if="functionsSelected === true" class="m-0 p-0 overflow-auto" cols="8" >
         <Functions/>
       </b-col>
       <b-col v-else class="m-0 p-0 overflow-auto" cols="8" >
@@ -95,6 +95,8 @@ export default {
       return this.$store.state.svcName;
     },
     functionsSelected() {
+      console.log('finctionsSelected =');
+      console.log(this.$store.state.functionsSelected);
       return this.$store.state.functionsSelected;
     },
   },

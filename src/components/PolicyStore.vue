@@ -1,7 +1,6 @@
 <template>
 <b-card bg-variant="light"
  no-body class="border-0 rounded-0  vh-100 overflow-auto">
-  <!--<b-card-header v-if="getServicesSucceed" class="border-right rounded-0">-->
   <b-card-header class="border-right rounded-0">
     <b-row>
       <b-col cols="8">
@@ -14,10 +13,6 @@
       </b-col>
     </b-row>
   </b-card-header>
-  <!--<b-card-header v-else header-bg-variant="danger" header-text-variant="white"
-   class="border-left rounded-0">
-      Pls set PMS endpoint correctly!!!
-  </b-card-header>-->
   <b-card-body class="border-right">
     <b-row class="mt-3 mb-2 ">
       <b-col cols="5">
@@ -73,11 +68,11 @@
 
     <b-row class="mt-3 mb-2">
       <b-col cols="5">
-        <b-button  block v-b-toggle.function-list variant="primary">
+        <b-button block @click="functionSelected" variant="primary">
           Functions
         </b-button>
       </b-col>
-      <b-col cols="3">
+      <!--<b-col cols="3">
         <b-button pill variant="outline-success"
         @click="createSvc">
         <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
@@ -86,9 +81,9 @@
       <b-col cols="3">
         <b-form-input  type="text"
         v-model="functionSearch" placeholder="*"/>
-      </b-col>
+      </b-col>-->
     </b-row>
-    <b-collapse id="function-list">
+    <!--<b-collapse id="function-list">
       <b-list-group flush>
         <b-list-group-item v-for="s in filteredFunctions" :key="s.name" href="#">
           <b-row>
@@ -103,7 +98,7 @@
           </b-row>
         </b-list-group-item>
       </b-list-group>
-    </b-collapse>
+    </b-collapse>-->
   </b-card-body>
 </b-card>
 </template>
@@ -131,11 +126,6 @@ export default {
         (service) => service.name.toLowerCase().includes(this.serviceSearch.toLowerCase()),
       );
     },
-    filteredFunctions() {
-      return this.functions.filter(
-        (f) => f.name.toLowerCase().includes(this.functionSearch.toLowerCase()),
-      );
-    },
     pmsEndpoint() {
       return this.$store.state.pmsEndpoint;
     },
@@ -149,6 +139,10 @@ export default {
     },
   },
   methods: {
+    functionSelected() {
+      this.$store.commit('updateSvcName', '');
+      this.$store.commit('selectFunctions');
+    },
     setSvcName(svcName) {
       console.log(this.$store.state.svcName);
       if (svcName !== this.$store.state.svcName) {

@@ -8,7 +8,7 @@ export default new Vuex.Store({
     pmsEndpoint: 'http://localhost:6733/policy-mgmt/v1',
     adsEndpoint: 'http://localhost:6734/authz-check/v1',
     svcName: '',
-    functionSelected: false,
+    functionsSelected: false,
   },
   mutations: {
     updatePmsEndpoint(state, endpoint) {
@@ -18,13 +18,16 @@ export default new Vuex.Store({
       state.adsEndpoint = endpoint;
     },
     updateSvcName(state, svcName) {
-      console.log('updateSvcName');
-      console.log(svcName);
+      // console.log('updateSvcName');
+      // console.log(svcName);
+      console.log(state.functionSelected);
       state.svcName = svcName;
-      state.functionSelected = false;
+      state.functionsSelected = false;
     },
     selectFunctions(state) {
-      state.functionSelected = true;
+      console.log(state.functionSelected);
+      state.functionsSelected = true;
+      console.log(state.functionSelected);
     },
   },
   actions: {

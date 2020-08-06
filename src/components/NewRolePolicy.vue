@@ -7,7 +7,7 @@
         label-cols-sm="2"
         label="Effect:"
         label-align-sm="right"
-        label-for="policy-effect"
+        label-for="rp-effect"
       >
         <b-row >
           <b-col cols="5">
