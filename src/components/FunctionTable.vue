@@ -9,13 +9,13 @@
       </b-button>
     </template>
     <template v-slot:cell(ca)="data">
-      <b-button pill variant="outline-success" size="sm"
+      <b-button pill variant="outline-info" size="sm"
         @click="viewCA(data.item.ca)">
       <b-icon icon="eye-fill" aria-hidden="true"></b-icon>
       </b-button>
     </template>
     <template v-slot:cell(description)="data">
-      <b-button pill variant="outline-success" size="sm"
+      <b-button pill variant="outline-info" size="sm"
         @click="viewDescription(data.item.description)">
       <b-icon icon="eye-fill" aria-hidden="true"></b-icon>
       </b-button>

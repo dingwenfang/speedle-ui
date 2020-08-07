@@ -22,7 +22,7 @@
         label="Principals:"
         label-align-sm="right"
       >
-        <b-row >
+        <b-row>
           <b-col cols="5">
             <b-card>
             <ul v-if="policy.principals.length">
@@ -36,7 +36,7 @@
             </b-card>
           </b-col>
           <b-col cols="2" align-self="center">
-            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-success"  @click="addPrincipal">
+            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-info"  @click="addPrincipal">
               <b-icon icon="chevron-double-left" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
@@ -49,11 +49,11 @@
                 <b-form-input v-model="p.name" placeholder="name"></b-form-input>
               </b-col>
               <b-col v-if="andPrincipal.length == 1" cols="2" class="ml-0 pl-0 mr-0 pr-0">
-                <b-button  pill variant="outline-success" size="sm" @click="addAnd" >&</b-button>
+                <b-button  pill variant="outline-info" size="sm" @click="addAnd" >&</b-button>
               </b-col>
               <b-col v-else cols="2" class="ml-0 pl-0 mr-0 pr-0">
-                <b-button  pill variant="outline-success" size="sm" @click="addAnd">&</b-button>
-                <b-button  pill variant="outline-success" size="sm"
+                <b-button  pill variant="outline-info" size="sm" @click="addAnd">&</b-button>
+                <b-button  pill variant="outline-info" size="sm"
                  @click="removeAnd(p.id)">-</b-button>
               </b-col>
             </b-row>
@@ -66,7 +66,7 @@
         label="Permissions:"
         label-align-sm="right"
       >
-      <b-row >
+      <b-row>
           <b-col cols="5">
             <b-card>
               <ul v-if="policy.permissions.length">
@@ -80,12 +80,12 @@
             </b-card>
           </b-col>
           <b-col cols="2" align-self="center">
-            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-success"  @click="addPermission">
+            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-info"  @click="addPermission">
               <b-icon icon="chevron-double-left" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
           <b-col cols="5" align-self="center">
-            <b-row>
+            <b-row align-v="end">
               <b-col cols="5" class="pr-0" >
                 <b-form-input v-model="permission.action" placeholder="action"></b-form-input>
               </b-col>
@@ -111,7 +111,7 @@
         </b-row>
       </b-form-group>
     </b-form-group>
-    <b-button variant="outline-success" @click="$emit('addPolicy', policy)">
+    <b-button variant="outline-info" @click="$emit('addPolicy', policy)">
       Create
     </b-button>
   </b-card>

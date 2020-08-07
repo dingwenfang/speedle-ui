@@ -1,13 +1,14 @@
 <template>
 <b-card bg-variant="light"
  no-body class="border-0 rounded-0  vh-100 overflow-auto">
-  <b-card-header class="border-right rounded-0">
+  <b-card-header header-bg-variant="info"
+     header-text-variant="white" class="border-right rounded-0">
     <b-row>
-      <b-col cols="8">
-        Policy Store Navigation
+      <b-col cols="auto" class="mr-auto">
+        Policy Store Nav
       </b-col>
-      <b-col cols="4">
-        <b-button @click="refreshServices" pill variant="outline-success" size="sm">
+      <b-col cols="auto">
+        <b-button @click="refreshServices" variant="outline-light" size="sm">
             <b-icon icon="arrow-repeat" aria-hidden="true" size="sm"></b-icon>
         </b-button>
       </b-col>
@@ -16,12 +17,12 @@
   <b-card-body class="border-right">
     <b-row class="mt-3 mb-2 ">
       <b-col cols="5">
-        <b-button block v-b-toggle.service-list variant="primary">
+        <b-button block v-b-toggle.service-list variant="info">
           Services
         </b-button>
       </b-col>
-      <b-col cols="3">
-        <b-button v-b-modal.createSvc pill variant="outline-success">
+      <b-col cols="auto" class="ml-auto">
+        <b-button v-b-modal.createSvc pill variant="outline-info">
           <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
         </b-button>
         <b-modal id="createSvc" title="Create Service"
@@ -40,8 +41,8 @@
           </form>
         </b-modal>
       </b-col>
-      <b-col cols="3">
-        <b-form-input  type="text"
+      <b-col cols="auto" class="mr-auto">
+        <b-form-input  type="text" style="width: 3rem;"
         v-model="serviceSearch" placeholder="*"/>
       </b-col>
     </b-row>
@@ -58,7 +59,7 @@
                 <b-icon icon="trash" aria-hidden="true"></b-icon>
               </b-button>
               <b-modal :id="s.name" title="Delete Service"  @ok="deleteSvc(s.name)">
-                <p class="my-4">Continue deleting service {{s.name}}</p>
+                <p>Continue deleting service {{s.name}}?</p>
               </b-modal>
             </b-col>
           </b-row>
@@ -68,7 +69,7 @@
 
     <b-row class="mt-3 mb-2">
       <b-col cols="5">
-        <b-button block @click="functionSelected" variant="primary">
+        <b-button block @click="functionSelected" variant="info">
           Functions
         </b-button>
       </b-col>

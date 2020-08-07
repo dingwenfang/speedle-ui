@@ -1,6 +1,7 @@
 <template>
   <b-card  no-body class="border-0 rounded-0  vh-100 overflow-auto">
-    <b-card-header header-bg-variant="light"  class="border-left rounded-0">
+    <b-card-header header-bg-variant="info"
+     header-text-variant="white" class="border-left rounded-0">
         Welcome
     </b-card-header>
     <b-card-body>

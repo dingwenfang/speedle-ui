@@ -1,8 +1,8 @@
 <template>
   <b-card no-body class="rounded-0">
-    <b-card-header header-bg-variant="info" header-text-variant="white" class="rounded-0" >
-      <b-row>
-        <b-col cols="4">
+    <b-card-header header-bg-variant="light" header-text-variant="white" class="rounded-0" >
+      <b-row align-v="center">
+        <b-col cols="auto" class="mr-auto">
           <b-dropdown ref="settings" variant="info" no-caret>
             <template v-slot:button-content>
               <b-icon icon="gear" aria-hidden="true"></b-icon> Settings
@@ -29,14 +29,15 @@
                   v-model="adsEndpoint"
                 ></b-form-input>
               </b-form-group>
-              <b-button variant="primary" size="sm" @click="updateSettings">OK</b-button>
+              <b-button variant="info" size="sm" @click="updateSettings">OK</b-button>
             </b-dropdown-form>
           </b-dropdown>
         </b-col>
-        <b-col cols="6" class="align-center">
-          <h3>Policy Management Console</h3>
+        <b-col cols="auto" class="mr-auto">
+          <!--<h3>Policy Management Console</h3>-->
+          <b-img src="sp_h_01.svg" block></b-img>
         </b-col>
-        <b-col cols="2">
+        <b-col cols="auto">
           <b-dropdown text="About" variant="info" no-caret>
             <b-dropdown-item href="https://github.com/teramoby/speedle-plus">
               source code</b-dropdown-item>

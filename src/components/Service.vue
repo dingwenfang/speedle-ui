@@ -1,26 +1,24 @@
 <template>
-  <b-card  no-body class="border-0 rounded-0  vh-100 overflow-auto">
-  <b-card-header v-if="svcName !== ''" header-bg-variant="light"  class="border-left rounded-0">
-      Service Name: {{svcName}}
-  </b-card-header>
-  <b-card-header v-else header-bg-variant="danger" header-text-variant="white"
-   class="border-left rounded-0">
-      Pls select a service from left nav pane!!!
+  <b-card no-body class="border-0 rounded-0  vh-100 overflow-auto">
+  <b-card-header  header-bg-variant="info"
+     header-text-variant="white"
+    class="border-left rounded-0">
+    Service Name: <span class="font-weight-bold">{{svcName}}</span>
   </b-card-header>
   <!--<b-card-body class="border-left m-0 p-0">-->
     <b-card no-body  class="rounded-0 border-0 border-left">
-    <b-tabs card>
+    <b-tabs card active-nav-item-class="font-weight-bold text-info">
       <b-tab title="Policies" active>
         <b-row>
           <b-col cols="10">
             <b-button @click="newPolicyVisible = !newPolicyVisible"
-            pill class="mt-3 mb-3" variant="outline-success" size="sm">
+            pill class="mt-3 mb-3" variant="outline-info" size="sm">
               <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
           <b-col cols ="2">
             <b-button @click="refreshPolicies"
-             pill class="mt-3 mb-3" variant="outline-success" size="sm">
+             pill class="mt-3 mb-3" variant="outline-info" size="sm">
               <b-icon icon="arrow-repeat" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
@@ -37,13 +35,13 @@
         <b-row>
           <b-col cols="10">
             <b-button @click="newRolePolicyVisible = !newRolePolicyVisible"
-            pill class="mt-3 mb-3" variant="outline-success" size="sm">
+            pill class="mt-3 mb-3" variant="outline-info" size="sm">
               <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
           <b-col cols ="2">
             <b-button @click="refreshRolePolicies"
-             pill class="mt-3 mb-3" variant="outline-success" size="sm">
+             pill class="mt-3 mb-3" variant="outline-info" size="sm">
               <b-icon icon="arrow-repeat" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>

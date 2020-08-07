@@ -56,7 +56,7 @@
          id="function-ttl" type="number" v-model="newFunc.resultTTL"></b-form-input>
       </b-form-group>
     </b-form-group>
-    <b-button variant="outline-success" @click="$emit('addFunction', newFunc)">
+    <b-button variant="outline-info" @click="$emit('addFunction', newFunc)">
       Create
     </b-button>
   </b-card>

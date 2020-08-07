@@ -1,19 +1,20 @@
 <template>
   <b-card  no-body class="border-0 rounded-0  vh-100 overflow-auto">
-  <b-card-header header-bg-variant="light"  class="border-left rounded-0">
+  <b-card-header header-bg-variant="info"
+     header-text-variant="white"  class="border-left rounded-0">
       Functions
   </b-card-header>
   <b-card-body>
     <b-row>
       <b-col cols="8">
         <b-button @click="newFunctionVisible = !newFunctionVisible"
-        pill class="mt-3 mb-3" variant="outline-success" size="sm">
+        pill class="mt-3 mb-3" variant="outline-info" size="sm">
           <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
         </b-button>
       </b-col>
       <b-col cols ="2">
         <b-button @click="refreshFunctions"
-          pill class="mt-3 mb-3" variant="outline-success" size="sm">
+          pill class="mt-3 mb-3" variant="outline-info" size="sm">
           <b-icon icon="arrow-repeat" aria-hidden="true"></b-icon>
         </b-button>
       </b-col>

@@ -43,7 +43,7 @@
             </b-card>
           </b-col>
           <b-col cols="2" align-self="center">
-            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-success"  @click="addPrincipal">
+            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-info"  @click="addPrincipal">
               <b-icon icon="chevron-double-left" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
@@ -86,7 +86,7 @@
             </b-card>
           </b-col>
           <b-col cols="2" align-self="center">
-            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-success"  @click="addRole">
+            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-info"  @click="addRole">
               <b-icon icon="chevron-double-left" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
@@ -121,7 +121,7 @@
             </b-card>
           </b-col>
           <b-col cols="2" align-self="center">
-            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-success"  @click="addResource">
+            <b-button class="mt-2 ml-2 mb-2" pill variant="outline-info"  @click="addResource">
               <b-icon icon="chevron-double-left" aria-hidden="true"></b-icon>
             </b-button>
           </b-col>
@@ -144,7 +144,7 @@
       </b-form-group>
     </b-form-group>
 
-    <b-button variant="outline-success" @click="$emit('addRolePolicy', rolePolicy)">
+    <b-button variant="outline-info" @click="$emit('addRolePolicy', rolePolicy)">
       Create
     </b-button>
   </b-card>
