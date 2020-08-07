@@ -35,7 +35,7 @@
         </b-col>
         <b-col cols="auto" class="mr-auto">
           <!--<h3>Policy Management Console</h3>-->
-          <b-img src="sp_h_01.svg" block></b-img>
+          <b-img src="sp_h_008.svg" block></b-img>
         </b-col>
         <b-col cols="auto">
           <b-dropdown text="About" variant="info" no-caret>

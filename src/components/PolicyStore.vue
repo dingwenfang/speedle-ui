@@ -3,16 +3,16 @@
  no-body class="border-0 rounded-0  vh-100 overflow-auto">
   <b-card-header header-bg-variant="info"
      header-text-variant="white" class="border-right rounded-0">
-    <b-row>
-      <b-col cols="auto" class="mr-auto">
-        Policy Store Nav
-      </b-col>
+    <!--<b-row class="m-0 p-0">
+      <b-col cols="auto" class="mr-auto">-->
+        Policy Store
+      <!--</b-col>
       <b-col cols="auto">
         <b-button @click="refreshServices" variant="outline-light" size="sm">
             <b-icon icon="arrow-repeat" aria-hidden="true" size="sm"></b-icon>
         </b-button>
       </b-col>
-    </b-row>
+    </b-row>-->
   </b-card-header>
   <b-card-body class="border-right">
     <b-row class="mt-3 mb-2 ">
@@ -21,7 +21,7 @@
           Services
         </b-button>
       </b-col>
-      <b-col cols="auto" class="ml-auto">
+      <!--<b-col cols="auto" class="ml-auto">
         <b-button v-b-modal.createSvc pill variant="outline-info">
           <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
         </b-button>
@@ -40,11 +40,39 @@
             </b-form-group>
           </form>
         </b-modal>
-      </b-col>
-      <b-col cols="auto" class="mr-auto">
-        <b-form-input  type="text" style="width: 3rem;"
+      </b-col>-->
+      <b-col cols="auto" class="ml-auto">
+        <b-form-input  type="text" style="width: 3rem;" class="p-0 m-0" size="sm"
         v-model="serviceSearch" placeholder="*"/>
       </b-col>
+    </b-row>
+    <b-row  class="mb-2" align-h="end">
+      <b-col cols="auto">
+        <b-button v-b-modal.createSvc pill variant="outline-info" size="sm">
+          <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
+        </b-button>
+        <b-modal id="createSvc" title="Create Service"
+               ref="createSvcModal"
+               @show="resetNewSvc"
+               @hidden="resetNewSvc"
+               @ok="handleOk">
+          <form ref="createSvcform" @submit.stop.prevent="handleSubmit">
+            <b-form-group label="Name:" label-align="right" label-cols="4" label-for="input-name">
+              <b-form-input id="input-name" v-model="newSvc.name"
+               :state="newSvcNameState" required></b-form-input>
+            </b-form-group>
+            <b-form-group label="Type:" label-align="right" label-cols="4" label-for="input-type">
+              <b-form-input id="input-type" v-model="newSvc.type"></b-form-input>
+            </b-form-group>
+          </form>
+        </b-modal>
+      </b-col>
+      <b-col cols="auto">
+        <b-button @click="refreshServices" pill variant="outline-info" size="sm">
+            <b-icon icon="arrow-repeat" aria-hidden="true" size="sm"></b-icon>
+        </b-button>
+      </b-col>
+
     </b-row>
     <b-collapse id="service-list">
       <b-list-group flush>
