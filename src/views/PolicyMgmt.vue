@@ -38,7 +38,10 @@
           <b-img src="sp_h_008.svg" block></b-img>
         </b-col>
         <b-col cols="auto">
-          <b-dropdown text="About" variant="info" no-caret>
+          <b-dropdown variant="info" no-caret>
+            <template v-slot:button-content>
+              <b-icon icon="question-circle" aria-hidden="true"></b-icon> About
+            </template>
             <b-dropdown-item href="https://github.com/teramoby/speedle-plus">
               source code</b-dropdown-item>
             <b-dropdown-divider></b-dropdown-divider>
