@@ -17,8 +17,11 @@
   <b-card-body class="border-right">
     <b-row class="mt-3 mb-2 ">
       <b-col cols="5">
-        <b-button block v-b-toggle.service-list variant="info">
+        <b-button block v-b-toggle.service-list
+        @click="serviceListVisible=!serviceListVisible" variant="info">
           Services
+          <b-icon v-bind:icon="servicesIcon"
+          aria-hidden="true" size="sm"></b-icon>
         </b-button>
       </b-col>
       <!--<b-col cols="auto" class="ml-auto">
@@ -74,7 +77,7 @@
       </b-col>
 
     </b-row>
-    <b-collapse id="service-list">
+    <b-collapse id="service-list" v-model="serviceListVisible">
       <b-list-group flush>
         <b-list-group-item button
           v-for="s in filteredServices" :key="s.name" @click="setSvcName(s.name)">
@@ -138,6 +141,7 @@ export default {
   data() {
     return {
       getServicesSucceed: false,
+      serviceListVisible: false,
       serviceSearch: '',
       functionSearch: '',
       services: [],
@@ -157,6 +161,9 @@ export default {
     },
     pmsEndpoint() {
       return this.$store.state.pmsEndpoint;
+    },
+    servicesIcon() {
+      return this.serviceListVisible ? 'chevron-up' : 'chevron-down';
     },
   },
   watch: {
