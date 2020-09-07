@@ -1,5 +1,6 @@
 # speedle-ui
-Web UI for Speedle-plus
+Web UI for Speedle-plus.
+Provide the ability to create/delete/list service, policy, role-policy and function from UI.
 
 ## Deployment
 Note: PMS-endpoint is set to http://localhost:6733/policy-mgmt/v1 by default, you need to change the setting in UI if you want to connect to other PMS-endpoint.
